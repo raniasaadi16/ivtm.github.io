@@ -2,9 +2,9 @@
 var theme = function () {
     // Placeholdem
     // ---------------------------------------------------------------------------------------
-    function handlePlaceholdem() {
-        Placeholdem(document.querySelectorAll('[placeholder]'));
-    }
+    // function handlePlaceholdem() {
+    //     Placeholdem(document.querySelectorAll('[placeholder]'));
+    // }
     // superfish menu
     // ---------------------------------------------------------------------------------------
     function handleSuperFish() {
@@ -98,7 +98,7 @@ var theme = function () {
     return {
         init: function () {
             //handlePreventEmptyLinks();
-            handlePlaceholdem();
+            //handlePlaceholdem();
             handleSuperFish();
             handleSmoothScroll();
             //handlePrettyPhoto();
