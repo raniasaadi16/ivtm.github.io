@@ -72,14 +72,47 @@
 /* --------------------------------------------------------------------------
  * 1 - General
  * -------------------------------------------------------------------------- */
-
+.dataTables_wrapper {
+    overflow: auto;
+}
+@media screen and (max-width: 700px){
+    .dataTables_wrapper {
+        font-size: 14px;
+    }
+}
+td{
+    text-align: center;
+}
+th{
+    text-align: center;
+}
+.start{
+    text-align: start !important;
+    background: linear-gradient(136.53deg, #BC25B6 -2.82%, #DF5D72 100%);
+    color: #fff;
+}
+.first-th{
+    background: linear-gradient(136.53deg, #BC25B6 -2.82%, #DF5D72 100%);
+    color: #fff;
+    text-align: start;
+}
+.old-price{
+    text-decoration: line-through;
+}
+.new-price{
+    font-size: 22px;
+    font-weight: bold;
+    color: #BC25B6;
+}
+.owl-item ,.owl-item.active{
+    height: calc(100vh - 57px);
+}
 /* 1.1  - Google fonts
 /* ========================================================================== */
 
 
 /* 1.2 - Preloader
 /* ========================================================================== */
-
 #preloader {
     position: fixed;
     top: 0; bottom: 0;
@@ -604,12 +637,10 @@ ul ol, ol ul {
 .btn-theme-transparent:focus,
 .btn-theme-transparent:active{
     background-color: transparent;
-    border-color: #dc143c;
-    color: #dc143c;
+    color: #ffff;
 }
 .btn-theme-transparent:hover {
-    background-color: #435469;
-    border-color: #435469;
+    background: #1A1D48;
     color: #ffffff;
 }
 .btn-theme-transparent-grey,
@@ -719,9 +750,19 @@ textarea {
 /* --------------------------------------------------------------------------
  * 2 - Header
  * -------------------------------------------------------------------------- */
-
+.is-countdown{
+    background: transparent !important;
+    border: none !important;
+    font-size: 40px;
+    margin: 10px 0;
+}
+@media screen and (max-width: 700px){
+    .is-countdown{
+        font-size: 20px;
+    }
+}
  .header{
-     padding: 25px 0 !important;
+     padding: 25px 0;
  }
 .wide .header,
 .boxed .header > .container {
@@ -755,7 +796,12 @@ textarea {
 .boxed .header.shrink > .container {
     background-color:#1A1D48;
     top: 0;
-    padding: 10px 0 !important;
+    padding: 10px 0;
+}
+@media screen and (max-width: 992px){
+    .shrink{
+        padding: 29px !important;
+    }
 }
 .header .header-wrapper {
     position: relative;
@@ -919,7 +965,7 @@ textarea {
     display: none;
     position: fixed;
     padding: 0; margin: 0;
-    right: 280px; top: 43px;
+    right: 280px; top: 80px;
     font-size: 30px;
     line-height: 30px;
     border: none;
@@ -1964,10 +2010,39 @@ textarea {
 .sidebar .widget-title:before {
     display: none;
 }
-
+#register input{
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: 1px solid #ffff;
+    color: #ffff;
+    border-radius: 10px;
+    margin: 10px 0 20px 0;
+    padding: 7px;
+}
+#register select{
+    background: #ffffff;
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    border: none;
+    padding: 7px;
+    margin: 10px 0 20px 0;
+}
+#register button{
+    background: #BC25B6;
+    padding: 7px 15px;
+    margin: 10px 0;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+}
 /* 5.2 - Contact form / af-form
 /* ========================================================================== */
-
+.big{
+    font-size: 40px;
+    font-weight: bold;
+}
 #af-form .form-control {
     height: 60px;
     background-color: #ffffff;
@@ -1975,7 +2050,7 @@ textarea {
     color: #ffffff;
 }
 #af-form .form-control:focus {
-    border-color: #dc143c;
+    border-color: #BC25B6;
 }
 #af-form .form-control,
 #af-form .form-control:focus,
