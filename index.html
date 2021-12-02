@@ -533,15 +533,6 @@
                                         <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
                                     </tr>
                                     <tr>
-                                        <td class="start">Shared Booth
-                                        </td>
-                                        <td></td>
-                                        <td>4 in 1 booth</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
                                         <td class="start">Private Booth 
                                         </td>
                                         <td></td>
@@ -649,9 +640,15 @@
                             <span data-animation="flipInY" data-animation-delay="100" class="icon-inner"><span class="fa-stack"><i class="fa rhex fa-stack-2x"></i><i class="fa fa-ticket fa-stack-1x"></i></span></span>
                             <span data-animation="fadeInRight" data-animation-delay="100" class="title-inner">Contact Us</span>
                         </h1>
+                        <p>We are here to Help you ! Please fill these forum and our team will get back to you as soon as possible ! 
+                        <ul class="contact-infos">
+                            <li>For More Info : <span class="add-color">info@ivtm.travel</span></li>
+                            <li>For Exhibit : <span class="add-color">sales@ivtm.travel</span></li>
+                            <li>For Sponsorship : <span class="add-color">sponsor@ivtm.travel</span></li>
+                        </ul>
 
                         <!-- Contact form -->
-                        <form name="af-form" class="af-form row" method="post" id="contactForm" novalidate="novalidate">
+                        <form name="af-form" class="af-form row" method="POST" id="contactForm" novalidate="novalidate">
 
                             <div class="col-sm-12 af-outer af-required">
                                 <div class="form-group af-inner">
@@ -697,7 +694,7 @@
 
                         </form>
                         <!-- /Contact form -->
-                        <div class="modal" tabindex="-1">
+                        <div class="modal" id='modal' tabindex="-1">
                             <div class="modal-dialog" style="top:48%; transform: translateY(-50%);">
                               <div class="modal-content">
                                 <div class="modal-header">
@@ -748,7 +745,7 @@
                         <span data-animation="flipInY" data-animation-delay="300" class="icon-inner"><span class="fa-stack"><i class="fa rhex fa-stack-2x"></i><i class="fa fa-ticket fa-stack-1x"></i></span></span>
                         <span data-animation="fadeInRight" data-animation-delay="500" class="title-inner">Register now <small> / dont mıss event!</small></span>
                     </h1>
-                    <form action='https://forms.zohopublic.com/ceo102/form/IVTMExhibitors/formperma/7IAu07RwbNf6hEbj2tU2oSqjs0mQHOsKLJo9ZlF5xoE/htmlRecords/submit' name='form' id='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
+                    <form target="_blank" action='https://forms.zohopublic.com/ceo102/form/IVTMExhibitors/formperma/7IAu07RwbNf6hEbj2tU2oSqjs0mQHOsKLJo9ZlF5xoE/htmlRecords/submit' name='form' id='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
                         <input type="hidden" name="zf_referrer_name" value=""><!-- To Track referrals , place the referrer name within the " " in the above hidden input field -->
                         <input type="hidden" name="zf_redirect_url" value=""><!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field -->
                         <input type="hidden" name="zc_gad" value=""><!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM -->
@@ -808,8 +805,7 @@
         <script src="assets/plugins/countdown/jquery.plugin.min.js"></script>
         <script src="assets/plugins/countdown/jquery.countdown.min.js"></script>
         <script src="./assets/plugins/placeholdem.min.js"></script>
-        <script src="./assets/js/contact.min.js"></script>
-
+        <script src="https://malsup.github.io/jquery.form.js"></script>         
         <script src="./assets/js/mail-script.js"></script>
         <script src="./assets/js/jquery.validate.min.js"></script>
         <script src="./assets/js/form.js"></script>

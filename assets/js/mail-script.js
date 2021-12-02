@@ -19,13 +19,13 @@
                 },
                 success: function(data) {
                     $('.modal-body').html(data).css('color', 'green');
-                    $('.modal').modal('show') // you need bootstrap
+                    $('#modal').modal('show') // you need bootstrap
                     form.trigger('reset'); // reset form
                     submit.html('Send');  // reset submit button text
                 },
                 error: function(e) {
                     $('.modal-body').html('error!, please try again').css('color', 'red');
-                    $('.modal').modal('show')
+                    $('#modal').modal('show')
                     submit.html('Send'); 
                 }
             });
