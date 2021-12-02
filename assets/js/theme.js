@@ -1,40 +1,10 @@
 'use strict';
 var theme = function () {
-
-    // prevent empty links
-    // ---------------------------------------------------------------------------------------
-    function handlePreventEmptyLinks() {
-        $('a[href=#]').click(function (event) {
-            event.preventDefault();
-        });
-    }
-
     // Placeholdem
     // ---------------------------------------------------------------------------------------
     function handlePlaceholdem() {
         Placeholdem(document.querySelectorAll('[placeholder]'));
     }
-
-    // BootstrapSelect
-    // ---------------------------------------------------------------------------------------
-    function handleBootstrapSelect() {
-        $('.selectpicker').selectpicker();
-    }
-
-    // add hover class for correct view on mobile devices
-    // ---------------------------------------------------------------------------------------
-    function handleHoverClass() {
-        var hover = $('.thumbnail');
-        hover.hover(
-            function () {
-                $(this).addClass('hover');
-            },
-            function () {
-                $(this).removeClass('hover');
-            }
-        );
-    }
-
     // superfish menu
     // ---------------------------------------------------------------------------------------
     function handleSuperFish() {
@@ -80,14 +50,6 @@ var theme = function () {
         });
     }
 
-    // prettyPhoto
-    // ---------------------------------------------------------------------------------------
-    function handlePrettyPhoto() {
-        $("a[data-gal^='prettyPhoto']").prettyPhoto({
-            theme: 'dark_square'
-        });
-    }
-
     // Scroll totop button
     // ---------------------------------------------------------------------------------------
     function handleToTopButton() {
@@ -108,7 +70,7 @@ var theme = function () {
     // ---------------------------------------------------------------------------------------
     $(window).load(function() {
         $('#status').fadeOut();
-        $('#preloader').delay(200).fadeOut(100);
+        $('#preloader').delay(50).fadeOut(100);
     });
 
     // Shrink header on scroll
@@ -131,58 +93,17 @@ var theme = function () {
         $(window).on('touchmove',function(){ refresh(); });
 
     }
-
-    // handleTabsFAQ
-    // ---------------------------------------------------------------------------------------
-    function handleTabsFAQ() {
-        if($('#tabs-faq').length){
-            var tabs = $('#tabs-faq');
-            tabs.find('a').on('click', function () {
-                tabs.find('.fa-angle-right').removeClass('fa-angle-right').addClass('fa-plus');
-                $(this).find('.fa').removeClass('fa-plus').addClass('fa-angle-right');
-            });
-        }
-    }
-
-    // resize page
-    // ---------------------------------------------------------------------------------------
-    function resizePage() {
-        if ($('body').hasClass('boxed')) {
-            $('#main-slider').find('.page').each(function () {
-                $(this).removeAttr('style');
-            });
-        }
-        if ($('body').hasClass('coming-soon')) {
-            $('#main-slider').find('.page').each(function () {
-                $(this).removeAttr('style');
-                $('.page').css('min-height', $(window).height());
-            });
-        }
-        else {
-            $('.page').css('min-height', $(window).height());
-        }
-        $('#main-slider').trigger('refresh');
-        $('#testimonials').trigger('refresh');
-        $('.partners-carousel .owl-carousel').trigger('refresh');
-    }
-
     // INIT FUNCTIONS
     // ---------------------------------------------------------------------------------------
     return {
-        onResize: function() {
-            resizePage();
-        },
         init: function () {
-            handlePreventEmptyLinks();
+            //handlePreventEmptyLinks();
             handlePlaceholdem();
-            handleBootstrapSelect();
-            handleHoverClass();
             handleSuperFish();
             handleSmoothScroll();
-            handlePrettyPhoto();
+            //handlePrettyPhoto();
             handleToTopButton();
             handleAnimatedHeader();
-            handleTabsFAQ();
         },
         // Main Slider
         initMainSlider: function () {
@@ -216,62 +137,8 @@ var theme = function () {
             $('#defaultCountdown').countdown({until: austDay});
             $('#year').text(austDay.getFullYear());
         },
-        // Partners Slider
-        initPartnerSlider: function () {
-            $('.partners-carousel .owl-carousel').owlCarousel({
-                autoplay: true,
-                loop: true,
-                margin: 25,
-                dots: false,
-                nav: true,
-                navText: [
-                    "<i class='fa fa-caret-left'></i>",
-                    "<i class='fa fa-caret-right'></i>"
-                ],
-                responsive: {
-                    0:    {items: 1},
-                    479:  {items: 2},
-                    768:  {items: 3},
-                    991:  {items: 5},
-                    1024: {items: 6}
-                }
-            });
-        },
-        // Partners Slider
-        initEventCarousel: function () {
-            $('.event-carousel .owl-carousel').owlCarousel({
-                autoplay: false,
-                loop: false,
-                margin: 25,
-                dots: true,
-                nav: true,
-                navText: [
-                    "<i class='fa fa-caret-left'></i>",
-                    "<i class='fa fa-caret-right'></i>"
-                ],
-                responsive: {
-                    0:    {items: 1},
-                    479:  {items: 1},
-                    768:  {items: 2},
-                    991:  {items: 3},
-                    1024: {items: 4}
-                }
-            });
-        },
-        // Testimonials
-        initTestimonials: function () {
-            $('#testimonials').owlCarousel({
-                items: 1,
-                autoplay: true,
-                loop: true,
-                dots: true,
-                nav: false,
-                navText: [
-                    "<i class='fa fa-caret-left'></i>",
-                    "<i class='fa fa-caret-right'></i>"
-                ]
-            });
-        },
+  
+
         // Animation on Scroll
         initAnimation: function () {
             var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
