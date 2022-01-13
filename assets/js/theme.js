@@ -133,7 +133,7 @@ var theme = function () {
         // CountDown
         initCountDown: function () {
             var austDay = new Date();
-            austDay = new Date(austDay.getFullYear() + 1, 3 - 1, 22);
+            austDay = new Date(austDay.getFullYear(), 3 - 1, 22);
             $('#defaultCountdown').countdown({until: austDay});
             $('#year').text(austDay.getFullYear());
         },
